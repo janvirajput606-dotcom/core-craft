@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Studio | Vintage Modern Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-beige: #F5F5DC;
+            --text-black: #1A1A1A;
+            --accent-mocha: #6F4E37;
+            --detail-grey: #708090;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-beige);
+            color: var(--text-black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-black);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--text-black);
+            color: var(--bg-beige);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-mocha);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .eyebrow {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.35em;
+            color: #A67C52;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin: 1rem 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: #57534E;
+            margin-bottom: 2rem;
+        }
+
+        .flow-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .flow-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid #D6D3D1;
+            background: white;
+            padding: 0.75rem;
+        }
+
+        .check-icon {
+            color: #A67C52;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Customization Blocks */
+        .blocks-section {
+            padding: 2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blocks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .block-card {
+            border: 1px solid #D6D3D1;
+            background: white;
+            padding: 1.5rem;
+        }
+
+        .block-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .block-list {
+            list-style: none;
+        }
+
+        .block-list li {
+            font-size: 0.875rem;
+            color: #57534E;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Color Options */
+        .colors-section {
+            padding: 2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .colors-title {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .color-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #D6D3D1;
+            background: white;
+            padding: 1rem;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 24px;
+            border: 1px solid #1C1917;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-black);
+            color: var(--bg-beige);
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-image img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">VINTAGE MODERN</div>
+        <div class="menu-toggle">☰</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="custom.html">Custom Studio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <p class="eyebrow">Customization Options</p>
+            <h1 class="hero-title">Your Design, Our Iron Craftsmanship</h1>
+            <p class="hero-subtitle">
+                From couch covers to chair heights and complete custom dimensions, every detail can match your house style and comfort.
+            </p>
+            <div class="flow-list">
+                <div class="flow-item">
+                    <span class="check-icon">✓</span>
+                    <p>Choose frame style and structure</p>
+                </div>
+                <div class="flow-item">
+                    <span class="check-icon">✓</span>
+                    <p>Select cover texture and colors</p>
+                </div>
+                <div class="flow-item">
+                    <span class="check-icon">✓</span>
+                    <p>Finalize dimensions that fit your room</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?auto=format&fit=crop&w=1200&q=80" alt="Fabric and furniture customization options">
+        </div>
+    </section>
+
+    <!-- Customization Blocks -->
+    <section class="blocks-section">
+        <div class="blocks-grid">
+            <div class="block-card">
+                <h2 class="block-title">Frame Finishes</h2>
+                <ul class="block-list">
+                    <li>• Matte Black - Classic industrial look</li>
+                    <li>• Brushed Silver - Modern and sleek</li>
+                    <li>• Antique Gold - Vintage elegance</li>
+                    <li>• Mocha Brown - Warm and inviting</li>
+                </ul>
+            </div>
+            <div class="block-card">
+                <h2 class="block-title">Cover Materials</h2>
+                <ul class="block-list">
+                    <li>• Premium Leather - Durable and luxurious</li>
+                    <li>• Velvet - Soft and elegant</li>
+                    <li>• Linen - Natural and breathable</li>
+                    <li>• Synthetic Blend - Easy to clean</li>
+                </ul>
+            </div>
+            <div class="block-card">
+                <h2 class="block-title">Custom Dimensions</h2>
+                <ul class="block-list">
+                    <li>• Beds: Any length and width</li>
+                    <li>• Couches: Custom seating depth</li>
+                    <li>• Tables: Exact room fit</li>
+                    <li>• Chairs: Seat height options</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Options -->
+    <section class="colors-section">
+        <h2 class="colors-title">Cover & Upholstery Colors</h2>
+        <div class="colors-grid">
+            <div class="color-option">
+                <span>Ivory Beige</span>
+                <span class="color-swatch" style="background: #E9E1D0;"></span>
+            </div>
+            <div class="color-option">
+                <span>Matte Black</span>
+                <span class="color-swatch" style="background: #1C1917;"></span>
+            </div>
+            <div class="color-option">
+                <span>Mocha Brown</span>
+                <span class="color-swatch" style="background: #8B6A4A;"></span>
+            </div>
+            <div class="color-option">
+                <span>Slate Grey</span>
+                <span class="color-swatch" style="background: #6B7280;"></span>
+            </div>
+            <div class="color-option">
+                <span>Olive Smoke</span>
+                <span class="color-swatch" style="background: #6D705C;"></span>
+            </div>
+            <div class="color-option">
+                <span>Terracotta</span>
+                <span class="color-swatch" style="background: #B4603A;"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Vintage Modern Furniture. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
