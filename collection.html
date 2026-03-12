@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | Vintage Modern Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-beige: #F5F5DC;
+            --text-black: #1A1A1A;
+            --accent-mocha: #6F4E37;
+            --detail-grey: #708090;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-beige);
+            color: var(--text-black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-black);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--text-black);
+            color: var(--bg-beige);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-mocha);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            padding: 3rem 5%;
+            background-color: var(--white);
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            color: var(--detail-grey);
+        }
+
+        /* Collection Grid */
+        .collection-grid {
+            padding: 2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid #D6D3D1;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        /* Image Carousel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            cursor: grab;
+        }
+
+        .carousel:active {
+            cursor: grabbing;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 400px;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-nav.prev {
+            left: 10px;
+        }
+
+        .carousel-nav.next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+
+        .carousel-dot.active {
+            background: var(--accent-mocha);
+        }
+
+        /* Product Info */
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-material {
+            font-size: 0.875rem;
+            color: var(--accent-mocha);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: var(--detail-grey);
+        }
+
+        /* Mixed Layout Sizes */
+        .product-card.large {
+            grid-column: span 2;
+        }
+
+        .product-card.medium {
+            grid-column: span 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .carousel-slide {
+                height: 300px;
+            }
+            .product-card.large {
+                grid-column: span 1;
+            }
+            .page-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">VINTAGE MODERN</div>
+        <div class="menu-toggle">?</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="custom.html">Custom Studio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <h1>Our Collection</h1>
+        <p>Handcrafted Iron Furniture for Every Room</p>
+    </section>
+
+    <!-- Collection Grid -->
+    <section class="collection-grid">
+
+        <!-- Product 1: Iron Bed (Large) -->
+        <div class="product-card large">
+            <div class="carousel" id="carousel-1">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1505693416388-b0346efee539?auto=format&fit=crop&w=1200&q=80" alt="Iron Bed Frame">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80" alt="Iron Bed Side View">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80" alt="Iron Bed Detail">
+                    </div>
+                </div>
+                <button class="carousel-nav prev" onclick="moveCarousel(1, -1)">&#10094;</button>
+                <button class="carousel-nav next" onclick="moveCarousel(1, 1)">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide(1, 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(1, 1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(1, 2)"></span>
+                </div>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">The Industrial King Bed</h2>
+                <p class="product-material">Material: Heavy-Duty Iron Frame</p>
+                <p class="product-description">A statement piece for your bedroom. Features a robust iron frame with matte black finish. Perfect for modern and vintage interiors.</p>
+            </div>
+        </div>
+
+        <!-- Product 2: Modern Couch (Medium) -->
+        <div class="product-card medium">
+            <div class="carousel" id="carousel-2">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" alt="Modern Couch">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80" alt="Modern Couch Detail">
+                    </div>
+                </div>
+                <button class="carousel-nav prev" onclick="moveCarousel(2, -1)">&#10094;</button>
+                <button class="carousel-nav next" onclick="moveCarousel(2, 1)">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide(2, 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(2, 1)"></span>
+                </div>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Chic Modern Couch</h2>
+                <p class="product-material">Material: Iron Frame + Premium Fabric</p>
+                <p class="product-description">Elegant iron frame with customizable upholstery. Choose from multiple fabric colors and textures to match your living room.</p>
+            </div>
+        </div>
+
+        <!-- Product 3: Study Rack (Medium) -->
+        <div class="product-card medium">
+            <div class="carousel" id="carousel-3">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80" alt="Study Rack">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80" alt="Study Rack Detail">
+                    </div>
+                </div>
+                <button class="carousel-nav prev" onclick="moveCarousel(3, -1)">&#10094;</button>
+                <button class="carousel-nav next" onclick="moveCarousel(3, 1)">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide(3, 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(3, 1)"></span>
+                </div>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Industrial Study Rack</h2>
+                <p class="product-material">Material: Iron Frame + Wood Shelves</p>
+                <p class="product-description">Perfect for your home office. Sturdy iron construction with adjustable shelves. Custom sizes available.</p>
+            </div>
+        </div>
+
+        <!-- Product 4: Drawing Room Table (Large) -->
+        <div class="product-card large">
+            <div class="carousel" id="carousel-4">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=1200&q=80" alt="Drawing Room Table">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=1200&q=80" alt="Drawing Room Table Detail">
+                    </div>
+                </div>
+                <button class="carousel-nav prev" onclick="moveCarousel(4, -1)">&#10094;</button>
+                <button class="carousel-nav next" onclick="moveCarousel(4, 1)">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide(4, 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(4, 1)"></span>
+                </div>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Modern Drawing Room Table</h2>
+                <p class="product-material">Material: Iron Frame + Glass Top</p>
+                <p class="product-description">Sleek and contemporary. Iron base with tempered glass top. Perfect centerpiece for your living room.</p>
+            </div>
+        </div>
+
+        <!-- Product 5: Bar Chairs (Medium) -->
+        <div class="product-card medium">
+            <div class="carousel" id="carousel-5">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=800&q=80" alt="Bar Chairs">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80" alt="Bar Chairs Detail">
+                    </div>
+                </div>
+                <button class="carousel-nav prev" onclick="moveCarousel(5, -1)">&#10094;</button>
+                <button class="carousel-nav next" onclick="moveCarousel(5, 1)">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide(5, 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(5, 1)"></span>
+                </div>
+            </div>
+            <div class="product-info">
+                <h2 class="product-name">Industrial Bar Chairs</h2>
+                <p class="product-material">Material: Iron Frame + Upholstered Seat</p>
+                <p class="product-description">Set of 2 bar chairs. Customizable seat height and fabric color. Perfect for kitchen islands or home bars.</p>
+            </div>
+        </div>
+
+        <!-- Product 6: Bookshelf (Medium) -->
+        <div class="product-card medium">
+            <div class="carousel" id="carousel-6">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1594620302200-9a762244a156?auto=format&fit=crop&w=800&q=80" alt="Bookshelf">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1594040226829-7f251ab46d80?auto=format&fit=crop&w=8
