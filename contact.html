@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Core & Craft Modern Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HB2FF2RTEE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HB2FF2RTEE');
+    </script>
+    <style>
+        :root {
+            --bg-darker-beige: #E8E8D0; 
+            --card-grey: #F2F2F2;
+            --text-black: #1A1A1A;
+            --accent-mocha: #6F4E37;
+            --white: #FFFFFF;
+            --whatsapp-green: #25d366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-darker-beige);
+            color: var(--text-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: var(--text-black);
+            color: #F5F5DC;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-mocha);
+            transition: 0.3s;
+        }
+
+        .active {
+            color: var(--accent-mocha);
+            font-weight: 700;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .page-header {
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .line {
+            width: 80px;
+            height: 3px;
+            background: var(--accent-mocha);
+            margin: 0 auto;
+        }
+
+        .process-section {
+            padding: 2rem 5% 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .step-box {
+            background: var(--card-grey);
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
+            text-align: center;
+        }
+
+        .step-box:hover {
+            transform: translateY(-10px);
+            background: var(--white);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+        }
+
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: rgba(111, 78, 55, 0.12);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-weight: 700;
+        }
+
+        .step-box h3 {
+            margin-bottom: 1.2rem;
+            color: var(--accent-mocha);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .step-box p {
+            font-size: 0.95rem;
+            color: #4A4A4A;
+        }
+
+        .availability-note {
+            text-align: center;
+            margin-top: 5rem;
+            font-style: italic;
+            color: var(--accent-mocha);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .contact-details {
+            padding: 6rem 5%;
+            background: var(--text-black);
+            color: #F5F5DC;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 6rem;
+            flex-wrap: wrap;
+            margin-top: 3.5rem;
+        }
+
+        .method h4 {
+            color: var(--accent-mocha);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-whatsapp-large {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 18px 45px;
+            display: inline-block;
+            margin-top: 4rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 5px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        .whatsapp-icon { width: 35px; height: 35px; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        footer {
+            background-color: var(--text-black);
+            color: #F5F5DC;
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .menu-toggle { display: block; }
+            .page-header h1 { font-size: 2.5rem; }
+            .contact-grid { gap: 3rem; flex-direction: column; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Core & Craft</div>
+        <div class="menu-toggle">?</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="custom.html">Custom Studio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header reveal">
+        <h1>Let's Start a Project</h1>
+        <div class="line"></div>
+        <p style="margin-top: 1.5rem; color: #4A4A4A;">A seamless process from the first message to your doorstep.</p>
+    </section>
+
+    <main class="process-section">
+        <div class="process-grid">
+            <div class="step-box reveal">
+                <div class="step-number">1</div>
+                <h3>Contact Us</h3>
+                <p>Message us on WhatsApp or email to tell us which furniture piece caught your eye.</p>
+            </div>
+            <div class="step-box reveal">
+                <div class="step-number">2</div>
+                <h3>Requirements</h3>
+                <p>Discuss specific sizes and custom design details. You are always welcome to visit our local workshop.</p>
+            </div>
+            <div class="step-box reveal">
+                <div class="step-number">3</div>
+                <h3>Production</h3>
+                <p>Once the design is finalized, our artisans begin the hand-crafting process with premium iron.</p>
+            </div>
+            <div class="step-box reveal">
+                <div class="step-number">4</div>
+                <h3>Delivery</h3>
+                <p>We'll handle the logistics and deliver your new statement piece directly to your location.</p>
+            </div>
+        </div>
+        <p class="availability-note reveal">Currently exclusive to customers in Rajasthan.</p>
+    </main>
+
+    <section class="contact-details reveal">
+        <h2 style="font-size: 2.8rem;">Ready to Begin?</h2>
+        <div class="contact-grid">
+            <div class="method">
+                <h4>Email Inquiries</h4>
+                <p>info@vintagemodern.com</p>
+            </div>
+            <div class="method">
+                <h4>Direct WhatsApp</h4>
+                <p>+91 735 734 0222</p>
+            </div>
+        </div>
+        <a href="https://wa.me/917357340222" class="btn-whatsapp-large" target="_blank">Start Conversation</a>
+    </section>
+
+    <a href="https://wa.me/917357340222" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Core&Craft Modern Furniture. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Synchronized Mobile Menu Logic
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('nav ul');
+        menuToggle.addEventListener('click', () => {
+            if(navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.cssText = "display:flex; flex-direction:column; position:absolute; top:60px; left:0; width:100%; background:var(--text-black); padding:1rem; z-index:100;";
+            }
+        });
+
+        // Synchronized Scroll Reveal Logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
