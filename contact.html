@@ -15,6 +15,7 @@
     <style>
         :root {
             --bg-darker-beige: #E8E8D0; 
+            --bg-beige: #F5F5DC;
             --card-grey: #F2F2F2;
             --text-black: #1A1A1A;
             --accent-mocha: #6F4E37;
@@ -45,9 +46,10 @@
             color: inherit;
         }
 
+        /* SYNCED HEADER */
         header {
             background-color: var(--text-black);
-            color: #F5F5DC;
+            color: var(--bg-beige);
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
@@ -70,20 +72,33 @@
             gap: 2rem;
         }
 
+        nav a {
+            transition: color 0.4s ease;
+        }
+
         nav a:hover {
             color: var(--accent-mocha);
-            transition: 0.3s;
         }
 
         .active {
-            color: var(--accent-mocha);
+            color: var(--accent-mocha) !important;
             font-weight: 700;
         }
 
+        /* FIXED TOGGLE ICON */
         .menu-toggle {
             display: none;
-            font-size: 1.5rem;
+            flex-direction: column;
+            gap: 5px;
             cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--bg-beige);
+            transition: 0.3s;
         }
 
         .page-header {
@@ -112,7 +127,7 @@
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 3rem;
         }
@@ -150,11 +165,6 @@
             font-size: 1.4rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-        }
-
-        .step-box p {
-            font-size: 0.95rem;
-            color: #4A4A4A;
         }
 
         .availability-note {
@@ -204,6 +214,7 @@
             letter-spacing: 1px;
         }
 
+        /* WHATSAPP FLOAT */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -213,18 +224,15 @@
             background-color: var(--whatsapp-green);
             color: #FFF;
             border-radius: 50px;
-            text-align: center;
-            box-shadow: 2px 5px 20px rgba(0,0,0,0.2);
-            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1000;
+            box-shadow: 2px 5px 20px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
         }
 
         .whatsapp-float:hover { transform: scale(1.1); }
-
-        .whatsapp-icon { width: 35px; height: 35px; }
 
         .reveal {
             opacity: 0;
@@ -236,17 +244,45 @@
 
         footer {
             background-color: var(--text-black);
-            color: #F5F5DC;
+            color: var(--bg-beige);
             padding: 4rem 5%;
             text-align: center;
             border-top: 1px solid #333;
         }
 
+        /* MOBILE FIXES */
         @media (max-width: 768px) {
-            nav ul { display: none; }
-            .menu-toggle { display: block; }
-            .page-header h1 { font-size: 2.5rem; }
+            header { padding: 1rem 3%; }
+            .menu-toggle { display: flex; }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--text-black);
+                padding: 2rem;
+                text-align: center;
+                gap: 1.5rem;
+                z-index: 100;
+            }
+
+            nav ul.show { display: flex; }
+
+            .page-header { padding: 4rem 5% 2rem; }
+            .page-header h1 { font-size: 2.2rem; }
+            
+            .process-grid { 
+                grid-template-columns: 1fr; /* Prevents overflow/oversizing */
+                gap: 20px;
+            }
+            
+            .step-box { padding: 2.5rem 1.5rem; }
+            
             .contact-grid { gap: 3rem; flex-direction: column; }
+            .btn-whatsapp-large { width: 100%; padding: 18px 20px; }
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
         }
     </style>
@@ -255,9 +291,13 @@
 
     <header>
         <div class="logo">Core & Craft</div>
-        <div class="menu-toggle">?</div>
+        <div id="mobile-toggle" class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="collection.html">Collection</a></li>
                 <li><a href="custom.html">Custom Studio</a></li>
@@ -314,7 +354,7 @@
     </section>
 
     <a href="https://wa.me/917357340222" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:35px;">
     </a>
 
     <footer>
@@ -322,19 +362,15 @@
     </footer>
 
     <script>
-        // Synchronized Mobile Menu Logic
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('nav ul');
-        menuToggle.addEventListener('click', () => {
-            if(navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.cssText = "display:flex; flex-direction:column; position:absolute; top:60px; left:0; width:100%; background:var(--text-black); padding:1rem; z-index:100;";
-            }
+        // SYNCED MOBILE TOGGLE LOGIC
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
         });
 
-        // Synchronized Scroll Reveal Logic
+        // SYNCED SCROLL REVEAL LOGIC
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
