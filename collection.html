@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Collection | Core & Craft Modern Furniture</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HB2FF2RTEE"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-536X5ZCM2Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-HB2FF2RTEE');
+      gtag('config', 'G-536X5ZCM2Q');
+
+      // Function to track WhatsApp clicks
+      function trackWhatsAppClick() {
+        gtag('event', 'contact_whatsapp', {
+          'event_category': 'Contact',
+          'event_label': 'WhatsApp Floating Button'
+        });
+      }
     </script>
+    
     <style>
         :root {
             --bg-beige: #F5F5DC;
@@ -246,7 +256,7 @@
 
             .menu-toggle { 
                 display: flex; 
-                margin-left: auto; /* Pushes icon to the right */
+                margin-left: auto;
             }
 
             nav ul {
@@ -405,7 +415,7 @@
         </div>
     </main>
 
-    <a href="https://wa.me/917357340222" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/917357340222" class="whatsapp-float" target="_blank" onclick="trackWhatsAppClick()">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:35px;">
     </a>
 
