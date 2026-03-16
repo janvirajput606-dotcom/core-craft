@@ -160,7 +160,6 @@
             background-color: var(--white);
         }
 
-        /* UPDATED: Refined size for USP Header */
         .usp-section h2 {
             font-size: 2.2rem;
             margin-bottom: 1rem;
@@ -300,9 +299,29 @@
             gap: 2rem;
         }
 
+        /* Styling for the developer info */
+        .footer-dev {
+            margin-top: 1rem;
+        }
+        
+        .footer-dev p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
         @media (max-width: 768px) {
-            header { padding: 1rem 3%; }
-            .menu-toggle { display: flex; }
+            header { 
+                padding: 1rem 5%; 
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .menu-toggle { 
+                display: flex; 
+                margin-left: auto;
+            }
+
             nav ul {
                 display: none;
                 flex-direction: column;
@@ -316,6 +335,7 @@
                 gap: 1.5rem;
                 z-index: 100;
             }
+
             nav ul.show { display: flex; }
             .hero h1 { font-size: 2.5rem; }
             .usp-section h2 { font-size: 1.8rem; }
@@ -408,6 +428,10 @@
                 <h4>Contact Us</h4>
                 <p>Email: info@vintagemodern.com</p>
                 <p>Phone: +91 735 734 0222</p>
+                <div class="footer-dev">
+                    <p>Website Developer - Janvi</p>
+                    <p>janvirajput606@gmail.com</p>
+                </div>
             </div>
         </div>
         <p style="margin-top: 2rem; text-align: center; font-size: 0.8rem;">&copy; 2026 Core&Craft Modern Furniture. All Rights Reserved.</p>
