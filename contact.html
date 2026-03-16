@@ -250,10 +250,25 @@
             border-top: 1px solid #333;
         }
 
+        .footer-dev {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
         /* MOBILE FIXES */
         @media (max-width: 768px) {
-            header { padding: 1rem 3%; }
-            .menu-toggle { display: flex; }
+            header { 
+                padding: 1rem 5%; 
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .menu-toggle { 
+                display: flex; 
+                margin-left: auto; /* Pushes toggle to the right */
+            }
             
             nav ul {
                 display: none;
@@ -275,7 +290,7 @@
             .page-header h1 { font-size: 2.2rem; }
             
             .process-grid { 
-                grid-template-columns: 1fr; /* Prevents overflow/oversizing */
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
             
@@ -359,6 +374,10 @@
 
     <footer>
         <p>&copy; 2026 Core&Craft Modern Furniture. All Rights Reserved.</p>
+        <div class="footer-dev">
+            <p>Website Developer - Janvi</p>
+            <p>janvirajput606@gmail.com</p>
+        </div>
     </footer>
 
     <script>
