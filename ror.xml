@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://corecraft-living.vercel.app/</title>
+  <link>https://corecraft-living.vercel.app/</link>
+
+<item>
+     <link>https://corecraft-living.vercel.app/</link>
+     <title>Core &amp; Craft Modern Furniture | Iron &amp; Durability</title>
+     <description>Core &amp; Craft Modern Furniture | Iron &amp; Durability</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://corecraft-living.vercel.app/index.html</link>
+     <title>Core &amp; Craft Modern Furniture | Iron &amp; Durability</title>
+     <description>Core &amp; Craft Modern Furniture | Iron &amp; Durability</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://corecraft-living.vercel.app/collection.html</link>
+     <title>The Collection | Core &amp; Craft Modern Furniture</title>
+     <description>The Collection | Core &amp; Craft Modern Furniture</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://corecraft-living.vercel.app/custom.html</link>
+     <title>Custom Studio | Core &amp; Craft Modern Furniture</title>
+     <description>Custom Studio | Core &amp; Craft Modern Furniture</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://corecraft-living.vercel.app/contact.html</link>
+     <title>Contact Us | Core &amp; Craft Modern Furniture</title>
+     <description>Contact Us | Core &amp; Craft Modern Furniture</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
